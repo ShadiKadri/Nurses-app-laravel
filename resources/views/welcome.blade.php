@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container">
+        <div>
+            <img class="justify-content-center" src="images/logo.jpg">
+        </div>
         <div class="row mb-4 justify-content-center">
             <div class="col-md-8">
                 <h1>Book your appointment today!</h1>

@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <a class="header-brand" href="{{ url('/dashboard') }}">
                 <div class="logo-img">
-
+                    <img src="images/logo.jpg" width="30px" height="30px">
                 </div>
                 <span class="text">Hospital</span>
             </a>
