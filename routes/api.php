@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/login', 'Api\ApiAuthController@login');
+
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::apiResource('/carings', 'Api\CaringsController');
+    Route::apiResource('/caringType', 'Api\CaringTypeController');
+    Route::apiResource('/nurse', 'Api\NurseController');
+    Route::apiResource('/patient', 'Api\PatientController');
+});
