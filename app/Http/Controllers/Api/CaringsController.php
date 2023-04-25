@@ -18,7 +18,10 @@ class CaringsController extends Controller
      */
     public function index()
     {
-        return new CaringsCollection(Caring::all());
+        $bookings = Caring::latest()
+        ->where('nurse_id', auth()->user()->id)
+        ->get();
+        return new CaringsCollection($bookings);
     }
 
     /**
