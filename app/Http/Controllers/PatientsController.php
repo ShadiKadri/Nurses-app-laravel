@@ -48,7 +48,11 @@ class PatientsController extends Controller
         $data['role_id'] = Role::where('name', 'patient')->first()->id;
         $imageName = null;
         if ($request->hasFile('image')) {
-            $imageName = (new User)->userAvatar($request);
+            try {
+                    $imageName = (new User)->userAvatar($request);
+                } catch (Exception $e) {
+                    imageName = null;
+                }
         }
 
         $user = User::create($data);
