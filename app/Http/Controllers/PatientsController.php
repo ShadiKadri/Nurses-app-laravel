@@ -51,7 +51,7 @@ class PatientsController extends Controller
             try {
                     $imageName = (new User)->userAvatar($request);
                 } catch (Exception $e) {
-                    imageName = null;
+                    $imageName = null;
                 }
         }
 
